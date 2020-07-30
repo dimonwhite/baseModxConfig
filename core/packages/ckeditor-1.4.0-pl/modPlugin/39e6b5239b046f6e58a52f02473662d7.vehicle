@@ -1,0 +1,128 @@
+<?php return array (
+  'unique_key' => 'name',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'PluginEvents' => 
+    array (
+      '2576960caa04d438d4d61dc76a740000' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnManagerPageBeforeRender","priority":0,"propertyset":0}',
+        'guid' => '7ae3daade5c6b1cb0efc59af05bd521d',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnManagerPageBeforeRender',
+        ),
+        'signature' => 'ba46ddc313e224de31aa54728e27ea4f',
+      ),
+      '30cd25b4da7a8edec5fc37fd458e9436' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnRichTextEditorRegister","priority":0,"propertyset":0}',
+        'guid' => '32bf014b9dc8cb6688795544e61acf79',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnRichTextEditorRegister',
+        ),
+        'signature' => 'c9e110a692b5fec44b3dc341094c3741',
+      ),
+      'ad356c7dee6baee95cf9e42627d0d744' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnRichTextBrowserInit","priority":0,"propertyset":0}',
+        'guid' => 'c76f2c83c171d7b28c961538aa6617b3',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnRichTextBrowserInit',
+        ),
+        'signature' => '256ca398998419bdc0ca6a206d81ec82',
+      ),
+      'e397e5e5bfbe0ad5e33adaccf1fbf902' => 
+      array (
+        'preserve_keys' => true,
+        'update_object' => false,
+        'unique_key' => 
+        array (
+          0 => 'pluginid',
+          1 => 'event',
+        ),
+        'class' => 'modPluginEvent',
+        'object' => '{"pluginid":0,"event":"OnRichTextEditorInit","priority":0,"propertyset":0}',
+        'guid' => '919fe6a515978cec2cbf212cbfabf104',
+        'native_key' => 
+        array (
+          0 => 0,
+          1 => 'OnRichTextEditorInit',
+        ),
+        'signature' => '149058648652f51bdb105e8aaac08373',
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'PluginEvents' => 
+    array (
+      'preserve_keys' => true,
+      'update_object' => false,
+      'unique_key' => 
+      array (
+        0 => 'pluginid',
+        1 => 'event',
+      ),
+    ),
+  ),
+  'namespace' => 'ckeditor',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"ckeditor-1.4.0-pl\\/modPlugin\\/39e6b5239b046f6e58a52f02473662d7\\/0\\/","target":"return MODX_MANAGER_PATH . \'assets\\/components\\/\';","name":"ckeditor"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"ckeditor-1.4.0-pl\\/modPlugin\\/39e6b5239b046f6e58a52f02473662d7\\/1\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"ckeditor"}',
+    ),
+    2 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"ckeditor-1.4.0-pl\\/modPlugin\\/39e6b5239b046f6e58a52f02473662d7.transport.resolver.resolver","name":"transport.resolver","type":"php"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '268474acfdc0792a6379d8f7b24f76f8',
+  'package' => 'modx',
+  'class' => 'modPlugin',
+  'signature' => '39e6b5239b046f6e58a52f02473662d7',
+  'native_key' => 1,
+  'object' => '{"id":1,"source":0,"property_preprocess":0,"name":"CKEditor","description":"CKEditor WYSIWYG editor plugin for MODx Revolution","editor_type":0,"category":0,"cache_type":0,"plugincode":"","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":1,"static_file":"ckeditor\\/elements\\/plugins\\/ckeditor.plugin.php","content":""}',
+);

@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'upgrademodx',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '3c9479116c58e5aadcd4eca66259dbca',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '8ef31ecdefdd0c65870e7bc04012b719',
+  'native_key' => 'ugm_groups',
+  'object' => '{"key":"ugm_groups","value":"Administrator","xtype":"textfield","namespace":"upgrademodx","area":"Security","editedon":null,"name":"groups","description":"group, or comma-separated list of groups, who will see the widget"}',
+);

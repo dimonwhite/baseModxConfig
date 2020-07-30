@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'modhelpers',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '1b0b83f6d1c9920faa871d9e91f690ac',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'fac224fa1568df58c3c64a42130e3427',
+  'native_key' => 'modhelpers_snippets_path',
+  'object' => '{"key":"modhelpers_snippets_path","value":"{core_path}elements\\/snippets","xtype":"textfield","namespace":"modhelpers","area":"modhelpers_main","editedon":null}',
+);

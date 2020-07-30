@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'phpthumbon',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '355d2c55f69176be3f976bc2b32b9b9a',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'ec41dffe2e81c405bc51e5138a44ff86',
+  'native_key' => 'phpthumbon.error_mode',
+  'object' => '{"key":"phpthumbon.error_mode","value":"1","xtype":"numberfield","namespace":"phpthumbon","area":"general","editedon":null}',
+);

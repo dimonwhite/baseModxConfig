@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'upgrademodx',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '4796fe12c0192320d81fef3462ae0a8a',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'bf18eb2b7d5f6744860ee4799c93e92f',
+  'native_key' => 'ugm_temp_dir',
+  'object' => '{"key":"ugm_temp_dir","value":"{base_path}ugmtemp\\/","xtype":"textfield","namespace":"upgrademodx","area":"Widget","editedon":null,"name":"UpgradeMODX Temp Directory","description":"Path to the directory used for temporary storage for downloading and unzipping files; Must be writable; default:{base_path}ugmtemp\\/"}',
+);

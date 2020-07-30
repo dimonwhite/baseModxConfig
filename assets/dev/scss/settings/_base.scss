@@ -1,0 +1,130 @@
+@import 'fonts';
+
+$black: #000000;
+
+.flex {
+    display: flex;
+    &.jsb {
+        justify-content: space-between;
+    }
+    &.jfs {
+        justify-content: flex-start;
+    }
+    &.jfe {
+        justify-content: flex-end;
+    }
+    &.jc {
+        justify-content: center;
+    }
+    &.ac {
+        align-items: center;
+    }
+    &.afs {
+        align-items: flex-start;
+    }
+    &.afe {
+        align-items: flex-end;
+    }
+}
+
+.inline-flex {
+    display: inline-flex;
+    &.jsb {
+        justify-content: space-between;
+    }
+    &.jfs {
+        justify-content: flex-start;
+    }
+    &.jfe {
+        justify-content: flex-end;
+    }
+    &.jc {
+        justify-content: center;
+    }
+    &.ac {
+        align-items: center;
+    }
+    &.afs {
+        align-items: flex-start;
+    }
+    &.afe {
+        align-items: flex-end;
+    }
+}
+
+*, *:before, *:after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+figure {
+    display: inline-block;
+    margin: 0;
+}
+
+p, ul, ol {
+    margin-top: 0;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 0.8em;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+p {
+    margin-bottom: 0.8em;
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+button {
+    padding: 0;
+    background: none;
+    outline: none !important;
+    border: none;
+    cursor: pointer;
+}
+
+html {
+    font-size: 1.04vw;
+    @include media(1280px) {
+        font-size: 20px;
+    }
+}
+
+html,
+body {
+	min-height: 100%;
+	scroll-behavior: smooth;
+}
+
+body {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    font-family: 'Avenir', sans-serif;
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: $black;
+    line-height: 1.5;
+    background-color: #fff;
+}
+
+.main {
+	flex-direction: column;
+	min-height: 100%;
+}
+
+.middle {
+	flex: 1 0 auto;
+}
+
+.header, .footer {
+	flex: 0 0 auto;
+}

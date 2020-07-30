@@ -1,0 +1,92 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Chunks' => 
+    array (
+      'b51de09d0a4514f0a14c7f0c249b3927' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modChunk',
+        'object' => '{"id":1,"source":0,"property_preprocess":0,"name":"UpgradeMODXTpl","description":"Tpl chunk for alert widget","editor_type":0,"category":0,"cache_type":0,"snippet":"<div id=\\"Upgrade_modx\\">\\r\\n    <h3 style=\\"color:[[+ugm_notice_color]]\\">[[+ugm_notice]]<\\/h3>\\r\\n    <br\\/>[[+ugm_current_version_caption]]: [[+ugm_current_version]]\\r\\n    <br\\/>[[+ugm_latest_version_caption]]: [[+ugm_latest_version]]\\r\\n\\r\\n\\r\\n\\r\\n    [[+ugm_version_form]]\\r\\n    <div id=\\"ugm_errors\\">[[+ugm_errors]]<\\/div>\\r\\n<\\/div>\\r\\n<script src=\\"[[+ugm_assets_url]]js\\/classie.js\\"><\\/script>\\r\\n<script src=\\"[[+ugm_assets_url]]js\\/progressButton.js\\"><\\/script>\\r\\n<script src=\\"[[+ugm_assets_url]]js\\/ugm-bottom.js\\"><\\/script>\\r\\n<p>&nbsp;<\\/p>\\r\\n\\r\\n\\r\\n","locked":0,"properties":"a:0:{}","static":0,"static_file":"","content":"<div id=\\"Upgrade_modx\\">\\r\\n    <h3 style=\\"color:[[+ugm_notice_color]]\\">[[+ugm_notice]]<\\/h3>\\r\\n    <br\\/>[[+ugm_current_version_caption]]: [[+ugm_current_version]]\\r\\n    <br\\/>[[+ugm_latest_version_caption]]: [[+ugm_latest_version]]\\r\\n\\r\\n\\r\\n\\r\\n    [[+ugm_version_form]]\\r\\n    <div id=\\"ugm_errors\\">[[+ugm_errors]]<\\/div>\\r\\n<\\/div>\\r\\n<script src=\\"[[+ugm_assets_url]]js\\/classie.js\\"><\\/script>\\r\\n<script src=\\"[[+ugm_assets_url]]js\\/progressButton.js\\"><\\/script>\\r\\n<script src=\\"[[+ugm_assets_url]]js\\/ugm-bottom.js\\"><\\/script>\\r\\n<p>&nbsp;<\\/p>\\r\\n\\r\\n\\r\\n"}',
+        'guid' => 'e91af180a87f45e65e06191756cd359f',
+        'native_key' => 1,
+        'signature' => '457412f3a4b0f42916f637d252799bda',
+      ),
+    ),
+    'Snippets' => 
+    array (
+      'cab7454f5cd914c44df03d5452e02459' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modSnippet',
+        'object' => '{"id":1,"source":0,"property_preprocess":0,"name":"UpgradeMODXWidget","description":"Upgrade MODX Dashboard widget","editor_type":0,"category":0,"cache_type":0,"snippet":"\\/**\\n * UpgradeMODXWidget snippet for UpgradeMODX extra\\n *\\n * Copyright 2015-2018 Bob Ray <https:\\/\\/bobsguides.com>\\n * Created on 08-16-2015\\n *\\n * UpgradeMODX is free software; you can redistribute it and\\/or modify it under the\\n * terms of the GNU General Public License as published by the Free Software\\n * Foundation; either version 2 of the License, or (at your option) any later\\n * version.\\n *\\n * UpgradeMODX is distributed in the hope that it will be useful, but WITHOUT ANY\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\n *\\n * You should have received a copy of the GNU General Public License along with\\n * UpgradeMODX; if not, write to the Free Software Foundation, Inc., 59 Temple\\n * Place, Suite 330, Boston, MA 02111-1307 USA\\n *\\n * @package upgrademodx\\n *\\/\\n\\n\\/**\\n * Description\\n * -----------\\n * UpgradeMODX Dashboard widget\\n * This package was inspired by the work of a number of people and I have borrowed some of their code.\\n * Dmytro Lukianenko (dmi3yy) is the original author of the MODX install script. Susan Sottwell, Sharapov,\\n * Bumkaka, Inreti, Zaigham Rana, frischnetz, and AgelxNash, also contributed and I\'d like to thank all\\n * of them for laying the groundwork.\\n *\\n * Variables\\n * ---------\\n * @var $modx modX\\n * @var $scriptProperties array\\n *\\n * @package upgrademodx\\n **\\/\\n\\n\\/* Properties\\n\\n * @property &groups textfield -- group, or comma-separated list of groups, who will see the widget; Default: (empty)..\\n * @property &hideWhenNoUpgrade combo-boolean -- Hide widget when no upgrade is available; Default: No.\\n * @property &interval textfield -- Interval between checks -- Examples: 1 week, 3 days, 6 hours; Default: 1 week.\\n * @property &language textfield -- Two-letter code of language to user; Default: en.\\n * @property &lastCheck textfield -- Date and time of last check -- set automatically; Default: (empty)..\\n * @property &latestVersion textfield -- Latest version (at last check) -- set automatically; Default: (empty)..\\n * @property &plOnly combo-boolean -- Show only pl (stable) versions; Default: yes.\\n * @property &versionsToShow textfield -- Number of versions to show in upgrade form (not widget); Default: 5.\\n *\\/\\n\\n\\n\\/* Initialize *\\/\\n\\/* This will execute when in MODX *\\/\\n$language = $modx->getOption(\'ugm_language\', null, $modx->getOption(\'manager_language\'), true);\\n$language = empty($language) ? \'en\' : $language;\\n$props = $scriptProperties;\\n$modx->lexicon->load($language . \':upgrademodx:default\');\\n$devMode = $modx->getOption(\'ugm.devMode\', null, false, true);\\n$groups = $modx->getOption(\'ugm_groups\', null, \'Administrator\', true);\\n\\n\\/* Return empty string if user shouldn\'t see widget *\\/\\nif (strpos($groups, \',\') !== false) {\\n    $groups = explode(\',\', $groups);\\n}\\nif (! $modx->user->isMember($groups)) {\\n    return \'\';\\n}\\n\\n$corePath = $modx->getOption(\'ugm.core_path\', null, $modx->getOption(\'core_path\', null, MODX_CORE_PATH) . \'components\\/upgrademodx\\/\');\\n$assetsUrl = $modx->getOption(\'ugm.assets_url\', null, $modx->getOption(\'assets_url\', null, MODX_ASSETS_URL) . \'components\\/upgrademodx\\/\');\\nrequire_once($corePath . \'model\\/upgrademodx\\/upgrademodx.class.php\');\\n$upgrade = new UpgradeMODX($modx);\\n$upgrade->init();\\n$props[\'ugm_setup_url\'] = MODX_SITE_URL . \'setup\\/index.php\';\\nunset($props[\'controller\']); \\/\\/ remove trash from scriptProperties\\n$modx->regClientStartupScript(\'<script>\\nvar ugmConnectorUrl = \\"\' . $assetsUrl . \'connector.php\\";\\nvar ugm_config = \' . $modx->toJSON($props)  . \';\\nvar ugm_setup_url = \\"\' . MODX_SITE_URL . \'setup\\/index.php\\";\\n<\\/script>\'\\n);\\n$modx->regClientCSS($assetsUrl . \'css\\/progress.css\');\\n$modx->regClientStartupScript(\\"\\/\\/ajax.googleapis.com\\/ajax\\/libs\\/jquery\\/1.9.1\\/jquery.min.js\\");\\n$modx->regClientStartupScript($assetsUrl . \'js\\/modernizr.custom.js\');\\n\\n$hideWhenNoUpgrade = $modx->getOption(\'ugm_hide_when_no_upgrade\', null, false, true);\\n$settingsVersion = $modx->getOption(\'settings_version\');\\n\\n\\/* Set Placeholders *\\/\\n$placeholders = array();\\n$placeholders[\'[[+ugm_assets_url]]\'] = $assetsUrl;\\n$placeholders[\'[[+ugm_current_version]]\'] = $settingsVersion;\\n$placeholders[\'[[+ugm_current_version_caption]]\'] = $modx->lexicon(\'ugm_current_version_caption\');\\n$placeholders[\'[[+ugm_latest_version_caption]]\'] = $modx->lexicon(\'ugm_latest_version_caption\');\\n\\n$upgradeAvailable = $upgrade->upgradeAvailable($settingsVersion);\\n$placeholders[\'[[+ugm_latest_version]]\'] = $upgrade->getLatestVersion();\\n\\nif ($devMode) {\\n    $upgradeAvailable = true;\\n}\\n\\nif ($upgradeAvailable) {\\n    $versionForm = $upgrade->createVersionForm($modx);\\n}\\n\\n$errors = $upgrade->getErrors();\\n\\nif (!empty($errors)) {\\n    $msg = \'\';\\n    foreach ($errors as $error) {\\n        $msg .= \'<br\\/><span style=\\"color:red\\">\' . $modx->lexicon(\'ugm_error\') .\\n            \': \' . $error . \'<\\/span>\';\\n    }\\n    return $msg;\\n}\\n\\n\\/* Process *\\/\\n\\n\\/* See if there\'s a new version *\\/\\nif ($upgradeAvailable) {\\n    $placeholders[\'[[+ugm_notice]]\'] = $modx->lexicon(\'ugm_upgrade_available\');\\n    $placeholders[\'[[+ugm_notice_color]]\'] = \'green\';\\n    $placeholders[\'[[+ugm_version_form]]\'] = $versionForm;\\n} else {\\n    if ($hideWhenNoUpgrade) {\\n        return \'\';\\n    } else {\\n        $placeholders[\'[[+ugm_notice]]\'] = $modx->lexicon(\'ugm_modx_up_to_date\');\\n        $placeholders[\'[[+ugm_notice_color]]\'] = \'gray\';\\n    }\\n}\\n\\/* Get Tpl *\\/\\n$tpl = $modx->getChunk(\'UpgradeMODXTpl\');\\n\\n\\/* Do the replacements *\\/\\n$tpl = str_replace(array_keys($placeholders), array_values($placeholders), $tpl);\\n\\n\\/*if (php_sapi_name() === \'cli\') {\\n    echo $tpl;\\n}*\\/\\n\\nreturn $tpl;","locked":0,"properties":"a:0:{}","moduleguid":"","static":0,"static_file":"","content":"\\/**\\n * UpgradeMODXWidget snippet for UpgradeMODX extra\\n *\\n * Copyright 2015-2018 Bob Ray <https:\\/\\/bobsguides.com>\\n * Created on 08-16-2015\\n *\\n * UpgradeMODX is free software; you can redistribute it and\\/or modify it under the\\n * terms of the GNU General Public License as published by the Free Software\\n * Foundation; either version 2 of the License, or (at your option) any later\\n * version.\\n *\\n * UpgradeMODX is distributed in the hope that it will be useful, but WITHOUT ANY\\n * WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR\\n * A PARTICULAR PURPOSE. See the GNU General Public License for more details.\\n *\\n * You should have received a copy of the GNU General Public License along with\\n * UpgradeMODX; if not, write to the Free Software Foundation, Inc., 59 Temple\\n * Place, Suite 330, Boston, MA 02111-1307 USA\\n *\\n * @package upgrademodx\\n *\\/\\n\\n\\/**\\n * Description\\n * -----------\\n * UpgradeMODX Dashboard widget\\n * This package was inspired by the work of a number of people and I have borrowed some of their code.\\n * Dmytro Lukianenko (dmi3yy) is the original author of the MODX install script. Susan Sottwell, Sharapov,\\n * Bumkaka, Inreti, Zaigham Rana, frischnetz, and AgelxNash, also contributed and I\'d like to thank all\\n * of them for laying the groundwork.\\n *\\n * Variables\\n * ---------\\n * @var $modx modX\\n * @var $scriptProperties array\\n *\\n * @package upgrademodx\\n **\\/\\n\\n\\/* Properties\\n\\n * @property &groups textfield -- group, or comma-separated list of groups, who will see the widget; Default: (empty)..\\n * @property &hideWhenNoUpgrade combo-boolean -- Hide widget when no upgrade is available; Default: No.\\n * @property &interval textfield -- Interval between checks -- Examples: 1 week, 3 days, 6 hours; Default: 1 week.\\n * @property &language textfield -- Two-letter code of language to user; Default: en.\\n * @property &lastCheck textfield -- Date and time of last check -- set automatically; Default: (empty)..\\n * @property &latestVersion textfield -- Latest version (at last check) -- set automatically; Default: (empty)..\\n * @property &plOnly combo-boolean -- Show only pl (stable) versions; Default: yes.\\n * @property &versionsToShow textfield -- Number of versions to show in upgrade form (not widget); Default: 5.\\n *\\/\\n\\n\\n\\/* Initialize *\\/\\n\\/* This will execute when in MODX *\\/\\n$language = $modx->getOption(\'ugm_language\', null, $modx->getOption(\'manager_language\'), true);\\n$language = empty($language) ? \'en\' : $language;\\n$props = $scriptProperties;\\n$modx->lexicon->load($language . \':upgrademodx:default\');\\n$devMode = $modx->getOption(\'ugm.devMode\', null, false, true);\\n$groups = $modx->getOption(\'ugm_groups\', null, \'Administrator\', true);\\n\\n\\/* Return empty string if user shouldn\'t see widget *\\/\\nif (strpos($groups, \',\') !== false) {\\n    $groups = explode(\',\', $groups);\\n}\\nif (! $modx->user->isMember($groups)) {\\n    return \'\';\\n}\\n\\n$corePath = $modx->getOption(\'ugm.core_path\', null, $modx->getOption(\'core_path\', null, MODX_CORE_PATH) . \'components\\/upgrademodx\\/\');\\n$assetsUrl = $modx->getOption(\'ugm.assets_url\', null, $modx->getOption(\'assets_url\', null, MODX_ASSETS_URL) . \'components\\/upgrademodx\\/\');\\nrequire_once($corePath . \'model\\/upgrademodx\\/upgrademodx.class.php\');\\n$upgrade = new UpgradeMODX($modx);\\n$upgrade->init();\\n$props[\'ugm_setup_url\'] = MODX_SITE_URL . \'setup\\/index.php\';\\nunset($props[\'controller\']); \\/\\/ remove trash from scriptProperties\\n$modx->regClientStartupScript(\'<script>\\nvar ugmConnectorUrl = \\"\' . $assetsUrl . \'connector.php\\";\\nvar ugm_config = \' . $modx->toJSON($props)  . \';\\nvar ugm_setup_url = \\"\' . MODX_SITE_URL . \'setup\\/index.php\\";\\n<\\/script>\'\\n);\\n$modx->regClientCSS($assetsUrl . \'css\\/progress.css\');\\n$modx->regClientStartupScript(\\"\\/\\/ajax.googleapis.com\\/ajax\\/libs\\/jquery\\/1.9.1\\/jquery.min.js\\");\\n$modx->regClientStartupScript($assetsUrl . \'js\\/modernizr.custom.js\');\\n\\n$hideWhenNoUpgrade = $modx->getOption(\'ugm_hide_when_no_upgrade\', null, false, true);\\n$settingsVersion = $modx->getOption(\'settings_version\');\\n\\n\\/* Set Placeholders *\\/\\n$placeholders = array();\\n$placeholders[\'[[+ugm_assets_url]]\'] = $assetsUrl;\\n$placeholders[\'[[+ugm_current_version]]\'] = $settingsVersion;\\n$placeholders[\'[[+ugm_current_version_caption]]\'] = $modx->lexicon(\'ugm_current_version_caption\');\\n$placeholders[\'[[+ugm_latest_version_caption]]\'] = $modx->lexicon(\'ugm_latest_version_caption\');\\n\\n$upgradeAvailable = $upgrade->upgradeAvailable($settingsVersion);\\n$placeholders[\'[[+ugm_latest_version]]\'] = $upgrade->getLatestVersion();\\n\\nif ($devMode) {\\n    $upgradeAvailable = true;\\n}\\n\\nif ($upgradeAvailable) {\\n    $versionForm = $upgrade->createVersionForm($modx);\\n}\\n\\n$errors = $upgrade->getErrors();\\n\\nif (!empty($errors)) {\\n    $msg = \'\';\\n    foreach ($errors as $error) {\\n        $msg .= \'<br\\/><span style=\\"color:red\\">\' . $modx->lexicon(\'ugm_error\') .\\n            \': \' . $error . \'<\\/span>\';\\n    }\\n    return $msg;\\n}\\n\\n\\/* Process *\\/\\n\\n\\/* See if there\'s a new version *\\/\\nif ($upgradeAvailable) {\\n    $placeholders[\'[[+ugm_notice]]\'] = $modx->lexicon(\'ugm_upgrade_available\');\\n    $placeholders[\'[[+ugm_notice_color]]\'] = \'green\';\\n    $placeholders[\'[[+ugm_version_form]]\'] = $versionForm;\\n} else {\\n    if ($hideWhenNoUpgrade) {\\n        return \'\';\\n    } else {\\n        $placeholders[\'[[+ugm_notice]]\'] = $modx->lexicon(\'ugm_modx_up_to_date\');\\n        $placeholders[\'[[+ugm_notice_color]]\'] = \'gray\';\\n    }\\n}\\n\\/* Get Tpl *\\/\\n$tpl = $modx->getChunk(\'UpgradeMODXTpl\');\\n\\n\\/* Do the replacements *\\/\\n$tpl = str_replace(array_keys($placeholders), array_values($placeholders), $tpl);\\n\\n\\/*if (php_sapi_name() === \'cli\') {\\n    echo $tpl;\\n}*\\/\\n\\nreturn $tpl;"}',
+        'guid' => 'ed07d9bb8ee2fe68fff664cc91088ceb',
+        'native_key' => 1,
+        'signature' => 'fc43a6fbb153b653e06a974a0b65056d',
+      ),
+    ),
+  ),
+  'abort_install_on_vehicle_fail' => true,
+  'related_object_attributes' => 
+  array (
+    'Snippets' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'Chunks' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+  ),
+  'namespace' => 'upgrademodx',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"upgrademodx-2.1.2-pl\\/modCategory\\/178a0f9304ec11c49bc2c26b2e8a500f\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"upgrademodx"}',
+    ),
+    1 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"upgrademodx-2.1.2-pl\\/modCategory\\/178a0f9304ec11c49bc2c26b2e8a500f\\/1\\/","target":"return MODX_ASSETS_PATH . \'components\\/\';","name":"upgrademodx"}',
+    ),
+    2 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"upgrademodx-2.1.2-pl\\/modCategory\\/178a0f9304ec11c49bc2c26b2e8a500f.widget.resolver.resolver","type":"php","name":"widget.resolver"}',
+    ),
+    3 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"upgrademodx-2.1.2-pl\\/modCategory\\/178a0f9304ec11c49bc2c26b2e8a500f.upgrademodx.resolver.resolver","type":"php","name":"upgrademodx.resolver"}',
+    ),
+  ),
+  'validate' => 
+  array (
+    0 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"upgrademodx-2.1.2-pl\\/modCategory\\/178a0f9304ec11c49bc2c26b2e8a500f.upgrademodx.validator.validator","type":"php","name":"upgrademodx.validator"}',
+    ),
+  ),
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'be905b2e7814eb80b8bac56f674d1c97',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => '178a0f9304ec11c49bc2c26b2e8a500f',
+  'native_key' => 1,
+  'object' => '{"id":1,"parent":0,"category":"UpgradeMODX","rank":0}',
+);

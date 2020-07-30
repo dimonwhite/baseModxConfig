@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'upgrademodx',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '6c48d2b4c21cb2e299dc13819cc62f54',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '7e685c1fe7634ba5a222fdd6b18b1eee',
+  'native_key' => 'ugm_cert_path',
+  'object' => '{"key":"ugm_cert_path","value":"","xtype":"textfield","namespace":"upgrademodx","area":"GitHub","editedon":null,"name":"Cert Path","description":"Path to SSL cert file in .pem format; rarely necessary"}',
+);

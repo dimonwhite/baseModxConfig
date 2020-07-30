@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'upgrademodx',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'fa5bf96394c881bfc1d16b348e9ff20d',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => 'a5d62216a54bce34576d720c98cd2fd0',
+  'native_key' => 'ugm_verbose',
+  'object' => '{"key":"ugm_verbose","value":"0","xtype":"combo-boolean","namespace":"upgrademodx","area":"GitHub","editedon":null,"name":"Verbose Error Messages","description":"Display full GitHub Error Messages"}',
+);

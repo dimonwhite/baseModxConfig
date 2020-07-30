@@ -1,0 +1,16 @@
+<?php return array (
+  'unique_key' => 'key',
+  'preserve_keys' => true,
+  'update_object' => false,
+  'namespace' => 'modhelpers',
+  'resolve' => NULL,
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => '6c3667f5a77d04dc647fbdea4cd78e52',
+  'package' => 'modx',
+  'class' => 'modSystemSetting',
+  'signature' => '85dfa965f8395af03cae7c878177523f',
+  'native_key' => 'modhelpers_bot_user_agents',
+  'object' => '{"key":"modhelpers_bot_user_agents","value":"bot,spider,slurp,ia_archiver,siteexplorer,MegaIndex","xtype":"textfield","namespace":"modhelpers","area":"modhelpers_main","editedon":null}',
+);

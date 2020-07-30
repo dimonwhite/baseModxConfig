@@ -1,0 +1,108 @@
+<?php return array (
+  'unique_key' => 'category',
+  'preserve_keys' => false,
+  'update_object' => true,
+  'related_objects' => 
+  array (
+    'Plugins' => 
+    array (
+      '81da0c15213e4f5a1af5a8b9f78624d2' => 
+      array (
+        'preserve_keys' => false,
+        'update_object' => true,
+        'unique_key' => 'name',
+        'class' => 'modPlugin',
+        'object' => '{"id":null,"source":1,"property_preprocess":0,"name":"modHelpers","description":"","editor_type":0,"category":0,"cache_type":0,"plugincode":"switch ($modx->event->name) {\\n    case \'OnMODXInit\':\\n        $loader = $modx->getOption(\'modhelpers_core_path\', null, MODX_CORE_PATH) . \'components\\/modhelpers\\/autoload.php\';\\n        if (file_exists($loader)) {\\n            require_once $loader;\\n            app()->singleton(\'detector\', \'Mobile_Detect\');\\n            app()->instance(\'modx\', $modx);\\n            app()->singleton(\'request\', function() {\\n                \\/** @var modHelpers\\\\Request $requestClass *\\/\\n                $requestClass = config(\'modhelpers_requestClass\', \'modHelpers\\\\Request\', true);\\n                return $requestClass::capture();\\n            });\\n            app()->singleton(\'response\', function() use ($modx) {\\n                \\/** @var modHelpers\\\\ResponseManager $manager *\\/\\n                $manager = config(\'modhelpers_responseManagerClass\', \'modHelpers\\\\ResponseManager\', true);\\n                return new $manager($modx);\\n            });\\n            app()->singleton(\'session\', function() {\\n                \\/** @var modHelpers\\\\Session $session *\\/\\n                $sessionClass = config(\'modhelpers_sessionClass\', \'modHelpers\\\\Session\', true);\\n                return new $sessionClass();\\n            });\\n            csrf_token();\\n\\n            $file = config(\'modhelpers_core_path\',MODX_CORE_PATH) . \'components\\/modhelpers\\/config\\/config.php\';\\n            if (file_exists($file)) {\\n                $config = include_once $file;\\n                if (array_notempty($config)) config($config);\\n            }\\n        }\\n        break;\\n    case \'OnPageNotFound\':\\n        request()->setCustom(true);\\n        break;\\n}","locked":0,"properties":null,"disabled":0,"moduleguid":"","static":0,"static_file":"core\\/components\\/modhelpers\\/elements\\/plugins\\/plugin.modhelpers.php","content":"switch ($modx->event->name) {\\n    case \'OnMODXInit\':\\n        $loader = $modx->getOption(\'modhelpers_core_path\', null, MODX_CORE_PATH) . \'components\\/modhelpers\\/autoload.php\';\\n        if (file_exists($loader)) {\\n            require_once $loader;\\n            app()->singleton(\'detector\', \'Mobile_Detect\');\\n            app()->instance(\'modx\', $modx);\\n            app()->singleton(\'request\', function() {\\n                \\/** @var modHelpers\\\\Request $requestClass *\\/\\n                $requestClass = config(\'modhelpers_requestClass\', \'modHelpers\\\\Request\', true);\\n                return $requestClass::capture();\\n            });\\n            app()->singleton(\'response\', function() use ($modx) {\\n                \\/** @var modHelpers\\\\ResponseManager $manager *\\/\\n                $manager = config(\'modhelpers_responseManagerClass\', \'modHelpers\\\\ResponseManager\', true);\\n                return new $manager($modx);\\n            });\\n            app()->singleton(\'session\', function() {\\n                \\/** @var modHelpers\\\\Session $session *\\/\\n                $sessionClass = config(\'modhelpers_sessionClass\', \'modHelpers\\\\Session\', true);\\n                return new $sessionClass();\\n            });\\n            csrf_token();\\n\\n            $file = config(\'modhelpers_core_path\',MODX_CORE_PATH) . \'components\\/modhelpers\\/config\\/config.php\';\\n            if (file_exists($file)) {\\n                $config = include_once $file;\\n                if (array_notempty($config)) config($config);\\n            }\\n        }\\n        break;\\n    case \'OnPageNotFound\':\\n        request()->setCustom(true);\\n        break;\\n}"}',
+        'guid' => 'e051f655cfca2efd58554955e8820944',
+        'native_key' => NULL,
+        'signature' => '1dc677b0ef4cd1db0034bebb68085d80',
+        'related_objects' => 
+        array (
+          'PluginEvents' => 
+          array (
+            'f72e0e5099ce72b213d08606954d514d' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnMODXInit","priority":-1000,"propertyset":0}',
+              'guid' => 'f23e0496e99e82385f5f3c2153be319d',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnMODXInit',
+              ),
+              'signature' => '3687c5db33fba63beb09ad8ae1e7377f',
+            ),
+            '379c0f762763b3e22836a4787aec355e' => 
+            array (
+              'preserve_keys' => true,
+              'update_object' => true,
+              'unique_key' => 
+              array (
+                0 => 'pluginid',
+                1 => 'event',
+              ),
+              'class' => 'modPluginEvent',
+              'object' => '{"pluginid":0,"event":"OnPageNotFound","priority":-1000,"propertyset":0}',
+              'guid' => '823d442a3f1c34e27eaba41e64a75bb6',
+              'native_key' => 
+              array (
+                0 => 0,
+                1 => 'OnPageNotFound',
+              ),
+              'signature' => '27bae916207d330964a71a9f9395b43f',
+            ),
+          ),
+        ),
+      ),
+    ),
+  ),
+  'related_object_attributes' => 
+  array (
+    'Plugins' => 
+    array (
+      'preserve_keys' => false,
+      'update_object' => true,
+      'unique_key' => 'name',
+    ),
+    'PluginEvents' => 
+    array (
+      'preserve_keys' => true,
+      'update_object' => true,
+      'unique_key' => 
+      array (
+        0 => 'pluginid',
+        1 => 'event',
+      ),
+    ),
+  ),
+  'namespace' => 'modhelpers',
+  'resolve' => 
+  array (
+    0 => 
+    array (
+      'type' => 'file',
+      'body' => '{"source":"modhelpers-3.7.0-pl\\/modCategory\\/ab71af7d9d8fc1aa399597b0b1bd5373\\/0\\/","target":"return MODX_CORE_PATH . \'components\\/\';","name":"modhelpers"}',
+    ),
+    1 => 
+    array (
+      'type' => 'php',
+      'body' => '{"source":"modhelpers-3.7.0-pl\\/modCategory\\/ab71af7d9d8fc1aa399597b0b1bd5373.resolve.setup.resolver","type":"php","name":"resolve.setup"}',
+    ),
+  ),
+  'validate' => NULL,
+  'vehicle_package' => 'transport',
+  'vehicle_class' => 'xPDOObjectVehicle',
+  'guid' => 'ac09ac98e5c8fbcd719c86cdbf460529',
+  'package' => 'modx',
+  'class' => 'modCategory',
+  'signature' => 'ab71af7d9d8fc1aa399597b0b1bd5373',
+  'native_key' => NULL,
+  'object' => '{"id":null,"parent":0,"category":"modHelpers","rank":0}',
+);
