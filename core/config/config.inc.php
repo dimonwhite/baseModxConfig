@@ -4,12 +4,12 @@
  */
 $database_type = 'mysql';
 $database_server = 'localhost';
-$database_user = 'site_sevds';
-$database_password = 'Q6e8L6b4';
+$database_user = 'baseModx';
+$database_password = 'password';
 $database_connection_charset = 'utf8';
-$dbase = 'site_sevds';
+$dbase = 'baseModx';
 $table_prefix = 'modx_';
-$database_dsn = 'mysql:host=localhost;dbname=site_sevds;charset=utf8';
+$database_dsn = 'mysql:host=localhost;dbname=baseModx;charset=utf8';
 $config_options = array (
 );
 $driver_options = array (
